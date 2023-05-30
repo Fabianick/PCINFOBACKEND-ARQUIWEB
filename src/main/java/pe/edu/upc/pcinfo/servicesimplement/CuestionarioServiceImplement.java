@@ -27,4 +27,9 @@ public class CuestionarioServiceImplement implements ICuestionarioService {
     public void delete(int id) {
         cR.deleteById(id);
     }
+
+    @Override
+    public Cuestionario listId(int id) {
+        return cR.findById(id).orElse(new Cuestionario());
+    }
 }

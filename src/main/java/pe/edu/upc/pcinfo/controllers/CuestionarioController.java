@@ -32,4 +32,17 @@ public class CuestionarioController {
     public void delete(@PathVariable("id") Integer id){
         cS.delete(id);
     }
+    @GetMapping("{id}")
+    public CuestionarioDTO listId(@PathVariable("id") Integer id){
+        ModelMapper m=new ModelMapper();
+        CuestionarioDTO dto=m.map(cS.listId(id),CuestionarioDTO.class);
+        return dto;
+    }
+    @PutMapping
+    public void goUpdate(@RequestBody CuestionarioDTO dto){
+        ModelMapper m=new ModelMapper();
+        Cuestionario c=m.map(dto,Cuestionario.class);
+        cS.insert(c);
+    }
+
 }
