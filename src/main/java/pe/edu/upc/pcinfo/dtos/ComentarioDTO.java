@@ -1,26 +1,11 @@
-package pe.edu.upc.pcinfo.entities;
-import javax.persistence.*;
+package pe.edu.upc.pcinfo.dtos;
+
 import java.time.LocalDate;
-@Entity
-@Table(name = "comentario")
-public class Comentario {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+public class ComentarioDTO {
     private int id;
-
-    @Column(name = "comentario", nullable = false, length = 60) //
     private String comentario;
-    @Column(name = "fecha")
     private LocalDate fecha;
-
-    public Comentario() {
-    }
-
-    public Comentario(int id, String comentario, LocalDate fecha) {
-        this.id = id;
-        this.comentario = comentario;
-        this.fecha = fecha;
-    }
 
     public int getId() {
         return id;
