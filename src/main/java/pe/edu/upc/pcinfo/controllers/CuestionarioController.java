@@ -28,4 +28,8 @@ public class CuestionarioController {
             return m.map(x,CuestionarioDTO.class);
         }).collect(Collectors.toList());
     }
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable("id") Integer id){
+        cS.delete(id);
+    }
 }

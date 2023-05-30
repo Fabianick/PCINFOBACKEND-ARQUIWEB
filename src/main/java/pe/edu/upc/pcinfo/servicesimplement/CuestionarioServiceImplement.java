@@ -22,4 +22,9 @@ public class CuestionarioServiceImplement implements ICuestionarioService {
     public List<Cuestionario> list() {
         return cR.findAll();
     }
+
+    @Override
+    public void delete(int id) {
+        cR.deleteById(id);
+    }
 }
