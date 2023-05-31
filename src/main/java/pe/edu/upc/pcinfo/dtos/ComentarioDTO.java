@@ -7,6 +7,8 @@ public class ComentarioDTO {
     private String comentario;
     private LocalDate fecha;
 
+    private int idCliente;
+
     public int getId() {
         return id;
     }
@@ -30,4 +32,13 @@ public class ComentarioDTO {
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
+
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+
 }

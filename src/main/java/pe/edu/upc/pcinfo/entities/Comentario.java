@@ -13,13 +13,17 @@ public class Comentario {
     @Column(name = "fecha")
     private LocalDate fecha;
 
+    @Column(name = "idCliente")
+    private int idCliente;
+
     public Comentario() {
     }
 
-    public Comentario(int id, String comentario, LocalDate fecha) {
+    public Comentario(int id, String comentario, LocalDate fecha, int idCliente) {
         this.id = id;
         this.comentario = comentario;
         this.fecha = fecha;
+        this.idCliente = idCliente;
     }
 
     public int getId() {
@@ -45,4 +49,14 @@ public class Comentario {
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
+
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+
+
 }
