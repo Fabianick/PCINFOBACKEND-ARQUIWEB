@@ -14,13 +14,18 @@ public class Recomendacion {
     @Column(name = "msnRecomnd",length = 60, nullable = false)
     private String msnRecomnd;
 
+    @ManyToOne
+    @JoinColumn(name = "idCuestionario")
+    private Cuestionario cuestionario;
+
     public Recomendacion() {
     }
 
-    public Recomendacion(int id, int nmRecomend, String msnRecomnd) {
+    public Recomendacion(int id, int nmRecomend, String msnRecomnd, Cuestionario cuestionario) {
         this.id = id;
         this.nmRecomend = nmRecomend;
         this.msnRecomnd = msnRecomnd;
+        this.cuestionario = cuestionario;
     }
 
     public int getId() {
@@ -45,5 +50,13 @@ public class Recomendacion {
 
     public void setMsnRecomnd(String msnRecomnd) {
         this.msnRecomnd = msnRecomnd;
+    }
+
+    public Cuestionario getCuestionario() {
+        return cuestionario;
+    }
+
+    public void setCuestionario(Cuestionario cuestionario) {
+        this.cuestionario = cuestionario;
     }
 }

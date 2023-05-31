@@ -1,5 +1,7 @@
 package pe.edu.upc.pcinfo.dtos;
 
+import pe.edu.upc.pcinfo.entities.Cliente;
+
 public class CuestionarioDTO {
     private int id;
     private String tipo_form;
@@ -11,6 +13,8 @@ public class CuestionarioDTO {
     private boolean Overclocking;
     private String Marca_Procesador;
     private String Programas_used;
+
+    private Cliente cliente;
 
     public int getId() {
         return id;
@@ -90,5 +94,13 @@ public class CuestionarioDTO {
 
     public void setProgramas_used(String programas_used) {
         Programas_used = programas_used;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 }

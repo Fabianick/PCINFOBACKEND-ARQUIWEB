@@ -1,5 +1,7 @@
 package pe.edu.upc.pcinfo.dtos;
 
+import pe.edu.upc.pcinfo.entities.Cuestionario;
+
 import javax.persistence.Column;
 
 public class RecomendacionDTO {
@@ -7,6 +9,10 @@ public class RecomendacionDTO {
     private int id;
     private int nmRecomend;
     private String msnRecomnd;
+
+    private Cuestionario cuestionario;
+
+
 
     public int getId() {
         return id;
@@ -30,5 +36,13 @@ public class RecomendacionDTO {
 
     public void setMsnRecomnd(String msnRecomnd) {
         this.msnRecomnd = msnRecomnd;
+    }
+
+    public Cuestionario getCuestionario() {
+        return cuestionario;
+    }
+
+    public void setCuestionario(Cuestionario cuestionario) {
+        this.cuestionario = cuestionario;
     }
 }

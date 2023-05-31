@@ -13,17 +13,18 @@ public class Comentario {
     @Column(name = "fecha")
     private LocalDate fecha;
 
-    @Column(name = "idCliente")
-    private int idCliente;
+    @ManyToOne
+    @JoinColumn(name = "idCliente")
+    private Cliente cliente;
 
     public Comentario() {
     }
 
-    public Comentario(int id, String comentario, LocalDate fecha, int idCliente) {
+    public Comentario(int id, String comentario, LocalDate fecha, Cliente cliente) {
         this.id = id;
         this.comentario = comentario;
         this.fecha = fecha;
-        this.idCliente = idCliente;
+        this.cliente = cliente;
     }
 
     public int getId() {
@@ -50,12 +51,12 @@ public class Comentario {
         this.fecha = fecha;
     }
 
-    public int getIdCliente() {
-        return idCliente;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
 

@@ -1,5 +1,7 @@
 package pe.edu.upc.pcinfo.dtos;
 
+import pe.edu.upc.pcinfo.entities.Cliente;
+
 import java.time.LocalDate;
 
 public class ComentarioDTO {
@@ -7,7 +9,7 @@ public class ComentarioDTO {
     private String comentario;
     private LocalDate fecha;
 
-    private int idCliente;
+    private Cliente cliente;
 
     public int getId() {
         return id;
@@ -33,12 +35,12 @@ public class ComentarioDTO {
         this.fecha = fecha;
     }
 
-    public int getIdCliente() {
-        return idCliente;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
 }

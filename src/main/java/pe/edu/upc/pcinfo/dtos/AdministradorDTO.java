@@ -1,5 +1,7 @@
 package pe.edu.upc.pcinfo.dtos;
 
+import pe.edu.upc.pcinfo.entities.Usuario;
+
 import java.time.LocalDate;
 
 public class AdministradorDTO {
@@ -11,6 +13,8 @@ public class AdministradorDTO {
     private LocalDate cumpleanos;
     private boolean estado_vacaciones;
     private boolean estado_contrato;
+
+    private Usuario usuario;
 
     public int getId() {
         return id;
@@ -66,6 +70,14 @@ public class AdministradorDTO {
 
     public void setEstado_contrato(boolean estado_contrato) {
         this.estado_contrato = estado_contrato;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
 

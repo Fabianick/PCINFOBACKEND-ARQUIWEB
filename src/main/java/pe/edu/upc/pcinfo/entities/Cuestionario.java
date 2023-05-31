@@ -27,10 +27,14 @@ public class Cuestionario {
     @Column(name = "programas_used",length = 60, nullable = false)
     private String Programas_used;
 
+    @ManyToOne
+    @JoinColumn(name = "idCliente")
+    private Cliente cliente;
+
     public Cuestionario() {
     }
 
-    public Cuestionario(int id, String tipo_form, String uso_de_pc, String presupuesto, String tamano_del_PC, String diseno, String tipo_de_refrigeracion, boolean overclocking, String marca_Procesador, String programas_used) {
+    public Cuestionario(int id, String tipo_form, String uso_de_pc, String presupuesto, String tamano_del_PC, String diseno, String tipo_de_refrigeracion, boolean overclocking, String marca_Procesador, String programas_used, Cliente cliente) {
         this.id = id;
         this.tipo_form = tipo_form;
         this.Uso_de_pc = uso_de_pc;
@@ -41,6 +45,7 @@ public class Cuestionario {
         this.Overclocking = overclocking;
         this.Marca_Procesador = marca_Procesador;
         this.Programas_used = programas_used;
+        this.cliente = cliente;
     }
 
     public int getId() {
@@ -121,5 +126,13 @@ public class Cuestionario {
 
     public void setProgramas_used(String programas_used) {
         Programas_used = programas_used;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 }

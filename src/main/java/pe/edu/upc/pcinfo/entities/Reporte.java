@@ -15,14 +15,19 @@ public class Reporte {
     @Column(name = "fecha")
     private LocalDate fecha;
 
+    @ManyToOne
+    @JoinColumn(name = "idAdministrador")
+    private Administrador administrador;
+
     public Reporte() {
     }
 
-    public Reporte(int id, String descripcion, String estado, LocalDate fecha) {
+    public Reporte(int id, String descripcion, String estado, LocalDate fecha, Administrador administrador) {
         this.id = id;
         this.descripcion = descripcion;
         this.estado = estado;
         this.fecha = fecha;
+        this.administrador = administrador;
     }
 
     public int getId() {
@@ -55,6 +60,14 @@ public class Reporte {
 
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
+    }
+
+    public Administrador getAdministrador() {
+        return administrador;
+    }
+
+    public void setAdministrador(Administrador administrador) {
+        this.administrador = administrador;
     }
 }
 

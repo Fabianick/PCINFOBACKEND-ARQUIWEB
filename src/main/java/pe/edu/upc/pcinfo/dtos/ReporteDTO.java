@@ -1,4 +1,6 @@
 package pe.edu.upc.pcinfo.dtos;
+import pe.edu.upc.pcinfo.entities.Administrador;
+
 import java.time.LocalDate;
 
 public class ReporteDTO {
@@ -10,6 +12,8 @@ public class ReporteDTO {
     private String estado;
 
     private LocalDate fecha;
+
+    private Administrador administrador;
 
     public int getId() {
         return id;
@@ -41,5 +45,13 @@ public class ReporteDTO {
 
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
+    }
+
+    public Administrador getAdministrador() {
+        return administrador;
+    }
+
+    public void setAdministrador(Administrador administrador) {
+        this.administrador = administrador;
     }
 }

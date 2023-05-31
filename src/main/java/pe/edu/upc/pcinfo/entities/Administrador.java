@@ -21,12 +21,15 @@ public class Administrador {
     private boolean estado_vacaciones;
     @Column(name = "estado_contrato")
     private boolean estado_contrato;
+    @ManyToOne
+    @JoinColumn(name = "idUsuario")
+    private Usuario usuario;
 
 
     public Administrador() {
     }
 
-    public Administrador(int id, String profesion, String area_trabajo, String horario, LocalDate cumpleanos, boolean estado_vacaciones, boolean estado_contrato) {
+    public Administrador(int id, String profesion, String area_trabajo, String horario, LocalDate cumpleanos, boolean estado_vacaciones, boolean estado_contrato, Usuario usuario) {
         this.id = id;
         this.profesion = profesion;
         this.area_trabajo = area_trabajo;
@@ -34,6 +37,7 @@ public class Administrador {
         this.cumpleanos = cumpleanos;
         this.estado_vacaciones = estado_vacaciones;
         this.estado_contrato = estado_contrato;
+        this.usuario = usuario;
     }
 
     public int getId() {
@@ -90,5 +94,13 @@ public class Administrador {
 
     public void setEstado_contrato(boolean estado_contrato) {
         this.estado_contrato = estado_contrato;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
