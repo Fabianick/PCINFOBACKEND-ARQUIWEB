@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/cuestionarios")
+@RequestMapping("/cuestionario")
 public class CuestionarioController {
     @Autowired
     private ICuestionarioService cS;

@@ -10,7 +10,7 @@ import pe.edu.upc.pcinfo.services.IReporteService;
 import java.util.List;
 import java.util.stream.Collectors;
 @RestController
-@RequestMapping("/reportes")
+@RequestMapping("/reporte")
 public class ReporteController {
     @Autowired
     private IReporteService reS;

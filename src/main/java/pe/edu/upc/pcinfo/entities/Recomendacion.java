@@ -3,7 +3,7 @@ package pe.edu.upc.pcinfo.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "recomendaciones")
+@Table(name = "recomendacion")
 public class Recomendacion {
 
     @Id

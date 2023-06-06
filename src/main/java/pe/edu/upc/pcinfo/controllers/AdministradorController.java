@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/administradores")
+@RequestMapping("/administrador")
 public class AdministradorController {
     @Autowired
     private IAdministradorService aS;
