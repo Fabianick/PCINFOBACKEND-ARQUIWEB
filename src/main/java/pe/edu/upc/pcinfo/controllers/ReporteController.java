@@ -9,6 +9,7 @@ import pe.edu.upc.pcinfo.services.IReporteService;
 
 import java.util.List;
 import java.util.stream.Collectors;
+@CrossOrigin(origins = "http://localhost:4200/administradores/mostrar",maxAge = 36000)
 @RestController
 @RequestMapping("/reporte")
 public class ReporteController {

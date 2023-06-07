@@ -8,9 +8,10 @@ public class ReporteDTO {
     private int id;
 
     private String descripcion;
-    private LocalDate fecha;
 
     private String estado;
+
+    private LocalDate fecha;
 
     private Administrador administrador;
 
@@ -30,20 +31,20 @@ public class ReporteDTO {
         this.descripcion = descripcion;
     }
 
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
-    }
-
     public String getEstado() {
         return estado;
     }
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
     }
 
     public Administrador getAdministrador() {
