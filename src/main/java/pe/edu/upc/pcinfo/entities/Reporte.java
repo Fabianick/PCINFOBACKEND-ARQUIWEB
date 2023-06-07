@@ -8,13 +8,13 @@ public class Reporte {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(name = "descripcion",length =100,nullable = false )
     private String descripcion;
-    @Column(name = "estado",length = 60,nullable = false)
-    private String estado;
     @Column(name = "fecha")
     private LocalDate fecha;
-
+    @Column(name = "estado",length = 60,nullable = false)
+    private String estado;
     @ManyToOne
     @JoinColumn(name = "idAdministrador")
     private Administrador administrador;
@@ -22,11 +22,11 @@ public class Reporte {
     public Reporte() {
     }
 
-    public Reporte(int id, String descripcion, String estado, LocalDate fecha, Administrador administrador) {
+    public Reporte(int id, String descripcion, LocalDate fecha, String estado, Administrador administrador) {
         this.id = id;
         this.descripcion = descripcion;
-        this.estado = estado;
         this.fecha = fecha;
+        this.estado = estado;
         this.administrador = administrador;
     }
 
@@ -46,20 +46,20 @@ public class Reporte {
         this.descripcion = descripcion;
     }
 
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
     public LocalDate getFecha() {
         return fecha;
     }
 
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public Administrador getAdministrador() {
