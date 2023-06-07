@@ -9,10 +9,10 @@ public class Recomendacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "valoracion_user",nullable = false)
-    private int valoracion_user;
-    @Column(name = "notas_adicionales",length = 60, nullable = false)
-    private String notas_adicionales;
+    @Column(name = "nmRecomend",nullable = false)
+    private int nmRecomend;
+    @Column(name = "msnRecomnd",length = 60, nullable = false)
+    private String msnRecomnd;
 
     @ManyToOne
     @JoinColumn(name = "idCuestionario")
@@ -21,10 +21,10 @@ public class Recomendacion {
     public Recomendacion() {
     }
 
-    public Recomendacion(int id, int valoracion_user, String notas_adicionales, Cuestionario cuestionario) {
+    public Recomendacion(int id, int nmRecomend, String msnRecomnd, Cuestionario cuestionario) {
         this.id = id;
-        this.valoracion_user = valoracion_user;
-        this.notas_adicionales = notas_adicionales;
+        this.nmRecomend = nmRecomend;
+        this.msnRecomnd = msnRecomnd;
         this.cuestionario = cuestionario;
     }
 
@@ -36,20 +36,20 @@ public class Recomendacion {
         this.id = id;
     }
 
-    public int getValoracion_user() {
-        return valoracion_user;
+    public int getNmRecomend() {
+        return nmRecomend;
     }
 
-    public void setValoracion_user(int valoracion_user) {
-        this.valoracion_user = valoracion_user;
+    public void setNmRecomend(int nmRecomend) {
+        this.nmRecomend = nmRecomend;
     }
 
-    public String getNotas_adicionales() {
-        return notas_adicionales;
+    public String getMsnRecomnd() {
+        return msnRecomnd;
     }
 
-    public void setNotas_adicionales(String notas_adicionales) {
-        this.notas_adicionales = notas_adicionales;
+    public void setMsnRecomnd(String msnRecomnd) {
+        this.msnRecomnd = msnRecomnd;
     }
 
     public Cuestionario getCuestionario() {
