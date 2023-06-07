@@ -9,11 +9,11 @@ public class Reporte {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "descripcion")
+    @Column(name = "descripcion",length =100,nullable = false )
     private String descripcion;
     @Column(name = "fecha")
     private LocalDate fecha;
-    @Column(name = "estado")
+    @Column(name = "estado",length = 60,nullable = false)
     private String estado;
     @ManyToOne
     @JoinColumn(name = "idAdministrador")
