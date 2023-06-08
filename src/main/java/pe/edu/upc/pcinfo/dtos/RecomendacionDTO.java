@@ -12,10 +12,8 @@ public class RecomendacionDTO {
     private int valoracion_user;
     private String notas_adicionales;
 
-
-
-
     private Cuestionario cuestionario;
+
 
     public int getId() {
         return id;
