@@ -14,7 +14,7 @@ public class ReporteServiceImplement implements IReporteService {
 
     @Override
     public void insert(Reporte reporte) {
-
+        reR.save(reporte);
     }
 
     @Override
