@@ -5,14 +5,14 @@ import pe.edu.upc.pcinfo.entities.Cliente;
 public class CuestionarioDTO {
     private int id;
     private String tipo_form;
-    private String Uso_de_pc;
-    private String Presupuesto;
-    private String Tamano_del_PC;
-    private String Diseno;
-    private String Tipo_de_refrigeracion;
-    private boolean Overclocking;
-    private String Marca_Procesador;
-    private String Programas_used;
+    private String uso_de_pc;
+    private String presupuesto;
+    private String tamano_del_pc;
+    private String diseno;
+    private String tipo_de_refrigeracion;
+    private String overclocking;
+    private String marca_procesador;
+    private String programas_used;
 
     private Cliente cliente;
 
@@ -33,67 +33,67 @@ public class CuestionarioDTO {
     }
 
     public String getUso_de_pc() {
-        return Uso_de_pc;
+        return uso_de_pc;
     }
 
     public void setUso_de_pc(String uso_de_pc) {
-        Uso_de_pc = uso_de_pc;
+        this.uso_de_pc = uso_de_pc;
     }
 
     public String getPresupuesto() {
-        return Presupuesto;
+        return presupuesto;
     }
 
     public void setPresupuesto(String presupuesto) {
-        Presupuesto = presupuesto;
+        this.presupuesto = presupuesto;
     }
 
-    public String getTamano_del_PC() {
-        return Tamano_del_PC;
+    public String getTamano_del_pc() {
+        return tamano_del_pc;
     }
 
-    public void setTamano_del_PC(String tamano_del_PC) {
-        Tamano_del_PC = tamano_del_PC;
+    public void setTamano_del_pc(String tamano_del_pc) {
+        this.tamano_del_pc = tamano_del_pc;
     }
 
     public String getDiseno() {
-        return Diseno;
+        return diseno;
     }
 
     public void setDiseno(String diseno) {
-        Diseno = diseno;
+        this.diseno = diseno;
     }
 
     public String getTipo_de_refrigeracion() {
-        return Tipo_de_refrigeracion;
+        return tipo_de_refrigeracion;
     }
 
     public void setTipo_de_refrigeracion(String tipo_de_refrigeracion) {
-        Tipo_de_refrigeracion = tipo_de_refrigeracion;
+        this.tipo_de_refrigeracion = tipo_de_refrigeracion;
     }
 
-    public boolean isOverclocking() {
-        return Overclocking;
+    public String getOverclocking() {
+        return overclocking;
     }
 
-    public void setOverclocking(boolean overclocking) {
-        Overclocking = overclocking;
+    public void setOverclocking(String overclocking) {
+        this.overclocking = overclocking;
     }
 
-    public String getMarca_Procesador() {
-        return Marca_Procesador;
+    public String getMarca_procesador() {
+        return marca_procesador;
     }
 
-    public void setMarca_Procesador(String marca_Procesador) {
-        Marca_Procesador = marca_Procesador;
+    public void setMarca_procesador(String marca_procesador) {
+        this.marca_procesador = marca_procesador;
     }
 
     public String getProgramas_used() {
-        return Programas_used;
+        return programas_used;
     }
 
     public void setProgramas_used(String programas_used) {
-        Programas_used = programas_used;
+        this.programas_used = programas_used;
     }
 
     public Cliente getCliente() {
