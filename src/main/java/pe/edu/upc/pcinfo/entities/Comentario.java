@@ -1,4 +1,5 @@
 package pe.edu.upc.pcinfo.entities;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 @Entity
@@ -8,23 +9,23 @@ public class Comentario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "comentario", nullable = false, length = 60) //
+    @Column(name = "comentario",length = 60, nullable = false)
     private String comentario;
     @Column(name = "fecha")
     private LocalDate fecha;
 
     @ManyToOne
-    @JoinColumn(name = "idCliente")
-    private Cliente cliente;
+    @JoinColumn(name = "idUsuario")
+    private Usuario usuario;
 
     public Comentario() {
     }
 
-    public Comentario(int id, String comentario, LocalDate fecha, Cliente cliente) {
+    public Comentario(int id, String comentario, LocalDate fecha, Usuario usuario) {
         this.id = id;
         this.comentario = comentario;
         this.fecha = fecha;
-        this.cliente = cliente;
+        this.usuario = usuario;
     }
 
     public int getId() {
@@ -51,13 +52,12 @@ public class Comentario {
         this.fecha = fecha;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
-
 
 }
