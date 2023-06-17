@@ -3,7 +3,7 @@ package pe.edu.upc.pcinfo.dtos;
 import javax.persistence.Column;
 
 public class UsuarioDTO {
-    private int id;
+    private int idUsuario;
     private int dni;
     private String nombre;
     private String apellidoP;
@@ -14,12 +14,12 @@ public class UsuarioDTO {
     private String contrasenia;
     private String pais;
 
-    public int getId() {
-        return id;
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public int getDni() {
