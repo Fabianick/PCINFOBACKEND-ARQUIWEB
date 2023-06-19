@@ -16,18 +16,18 @@ public class Reporte {
     private LocalDate fecha;
 
     @ManyToOne
-    @JoinColumn(name = "idAdministrador")
-    private Administrador administrador;
+    @JoinColumn(name = "idUsuario")
+    private Usuario usuario;
 
     public Reporte() {
     }
 
-    public Reporte(int id, String descripcion, String estado, LocalDate fecha, Administrador administrador) {
+    public Reporte(int id, String descripcion, String estado, LocalDate fecha, Usuario usuario) {
         this.id = id;
         this.descripcion = descripcion;
         this.estado = estado;
         this.fecha = fecha;
-        this.administrador = administrador;
+        this.usuario = usuario;
     }
 
     public int getId() {
@@ -62,12 +62,12 @@ public class Reporte {
         this.fecha = fecha;
     }
 
-    public Administrador getAdministrador() {
-        return administrador;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setAdministrador(Administrador administrador) {
-        this.administrador = administrador;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
 
