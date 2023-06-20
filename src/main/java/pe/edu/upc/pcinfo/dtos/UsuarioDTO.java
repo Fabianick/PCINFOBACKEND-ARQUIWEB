@@ -3,23 +3,23 @@ package pe.edu.upc.pcinfo.dtos;
 import javax.persistence.Column;
 
 public class UsuarioDTO {
-    private int idUsuario;
+    private int id;
     private int dni;
     private String nombre;
-    private String apellidoP;
-    private String apellidoM;
+    private String apellidop;
+    private String apellidom;
     private String correo;
     private String sexo;
     private int edad;
     private String contrasenia;
     private String pais;
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public int getId() {
+        return id;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getDni() {
@@ -38,20 +38,20 @@ public class UsuarioDTO {
         this.nombre = nombre;
     }
 
-    public String getApellidoP() {
-        return apellidoP;
+    public String getApellidop() {
+        return apellidop;
     }
 
-    public void setApellidoP(String apellidoP) {
-        this.apellidoP = apellidoP;
+    public void setApellidop(String apellidop) {
+        this.apellidop = apellidop;
     }
 
-    public String getApellidoM() {
-        return apellidoM;
+    public String getApellidom() {
+        return apellidom;
     }
 
-    public void setApellidoM(String apellidoM) {
-        this.apellidoM = apellidoM;
+    public void setApellidom(String apellidom) {
+        this.apellidom = apellidom;
     }
 
     public String getCorreo() {

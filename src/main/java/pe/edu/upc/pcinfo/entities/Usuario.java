@@ -7,15 +7,15 @@ import javax.persistence.*;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idUsuario;
+    private int id;
     @Column(name = "dni",length = 8,nullable = false)
     private int dni;
     @Column(name = "nombre",length = 60,nullable = false)
     private String nombre;
-    @Column(name = "apellidoP",length = 60,nullable = false)
-    private String apellidoP;
-    @Column(name = "apellidoM",length = 60,nullable = false)
-    private String apellidoM;
+    @Column(name = "apellidop",length = 60,nullable = false)
+    private String apellidop;
+    @Column(name = "apellidom",length = 60,nullable = false)
+    private String apellidom;
     @Column(name = "correo",length = 60,nullable = false)
     private String correo;
     @Column(name = "sexo",length = 60,nullable = false)
@@ -31,12 +31,12 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, int dni, String nombre, String apellidoP, String apellidoM, String correo, String sexo, int edad, String contrasenia, String pais) {
-        this.idUsuario = idUsuario;
+    public Usuario(int id, int dni, String nombre, String apellidop, String apellidom, String correo, String sexo, int edad, String contrasenia, String pais) {
+        this.id = id;
         this.dni = dni;
         this.nombre = nombre;
-        this.apellidoP = apellidoP;
-        this.apellidoM = apellidoM;
+        this.apellidop = apellidop;
+        this.apellidom = apellidom;
         this.correo = correo;
         this.sexo = sexo;
         this.edad = edad;
@@ -44,12 +44,12 @@ public class Usuario {
         this.pais = pais;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public int getId() {
+        return id;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getDni() {
@@ -68,20 +68,20 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getApellidoP() {
-        return apellidoP;
+    public String getApellidop() {
+        return apellidop;
     }
 
-    public void setApellidoP(String apellidoP) {
-        this.apellidoP = apellidoP;
+    public void setApellidop(String apellidop) {
+        this.apellidop = apellidop;
     }
 
-    public String getApellidoM() {
-        return apellidoM;
+    public String getApellidom() {
+        return apellidom;
     }
 
-    public void setApellidoM(String apellidoM) {
-        this.apellidoM = apellidoM;
+    public void setApellidom(String apellidom) {
+        this.apellidom = apellidom;
     }
 
     public String getCorreo() {
