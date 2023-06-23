@@ -3,6 +3,7 @@ package pe.edu.upc.pcinfo.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.pcinfo.dtos.CuestionarioDTO;
 import pe.edu.upc.pcinfo.dtos.RecomendacionDTO;
@@ -28,6 +29,7 @@ public class RecomendacionController {
         rS.insert(c);
     }
     @GetMapping
+    @PreAuthorize("hasAuthority('USER')")
     public List<RecomendacionDTO> list(){
         return rS.list().stream().map(x->{
             ModelMapper m=new ModelMapper();

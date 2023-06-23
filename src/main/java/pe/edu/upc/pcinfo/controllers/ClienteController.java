@@ -2,6 +2,7 @@ package pe.edu.upc.pcinfo.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.pcinfo.dtos.ClienteDTO;
 import pe.edu.upc.pcinfo.entities.Cliente;
@@ -23,7 +24,9 @@ public class ClienteController {
     }
 
     @GetMapping
-    public List<ClienteDTO> list(){
+    @PreAuthorize("hasAuthority('USER')")
+    public List<ClienteDTO> list()
+    {
         return cS.list().stream().map(x->{
             ModelMapper m = new ModelMapper();
             return m.map(x, ClienteDTO.class);

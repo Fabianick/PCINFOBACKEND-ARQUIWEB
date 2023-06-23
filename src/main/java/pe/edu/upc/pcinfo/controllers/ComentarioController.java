@@ -2,6 +2,7 @@ package pe.edu.upc.pcinfo.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.pcinfo.dtos.ComentarioDTO;
 import pe.edu.upc.pcinfo.entities.Comentario;
@@ -26,6 +27,7 @@ public class ComentarioController {
 
     //GET porque es para listar
     @GetMapping
+    @PreAuthorize("hasAuthority('USER')")
     public List<ComentarioDTO> list() {
         return cmS.list().stream().map(x->{
             ModelMapper m=new ModelMapper();
