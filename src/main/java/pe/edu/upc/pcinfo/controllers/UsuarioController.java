@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.pcinfo.dtos.UsuarioComentarioDTO;
 import pe.edu.upc.pcinfo.dtos.UsuarioDTO;
 import pe.edu.upc.pcinfo.entities.Usuario;
 import pe.edu.upc.pcinfo.services.IUsuarioService;
@@ -50,6 +51,13 @@ public class UsuarioController {
         ModelMapper m=new ModelMapper();
         Usuario u=m.map(dto,Usuario.class);
         uS.insert(u);
+    }
+
+
+    @GetMapping("/usuario-comentario-count")
+    public List<UsuarioComentarioDTO> getUsuarioComentarioCount() {
+        List<UsuarioComentarioDTO> usuarioComentarioDTOs = uS.consulta01();
+        return usuarioComentarioDTOs;
     }
 
 }

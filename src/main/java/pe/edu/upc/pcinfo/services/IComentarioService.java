@@ -5,6 +5,8 @@ import pe.edu.upc.pcinfo.entities.Comentario;
 import java.util.List;
 
 public interface IComentarioService {
+
+
     public void insert(Comentario comentario);
 
     List<Comentario> list();
@@ -12,4 +14,7 @@ public interface IComentarioService {
     public void delete(int idComentario);
 
     public Comentario listId(int idComentario);
+
+
+
 }
