@@ -51,7 +51,6 @@ public class ReporteController {
 
     }
     @GetMapping("/reporte-count")
-
     public List<UsuarioReporteDTO> getReporteCountByUsuario() {
         List<UsuarioReporteDTO> usuarioReporteDTOs = reS.consulta01();
         return usuarioReporteDTOs;

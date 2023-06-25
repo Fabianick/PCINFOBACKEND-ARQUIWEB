@@ -13,7 +13,6 @@ public interface IReporteRepository extends JpaRepository<Reporte,Integer> {
             "FROM reporte b\n" +
             "JOIN usuario a ON b.id_usuario = a.id\n" +
             "GROUP BY a.nombre\n" +
-            "ORDER BY COUNT(b.id) DESC\n" +
-            "LIMIT 5;", nativeQuery = true)
+            "ORDER BY COUNT(b.id) DESC", nativeQuery = true)
     List<String[]> getCountReporteByUsuario();
 }
