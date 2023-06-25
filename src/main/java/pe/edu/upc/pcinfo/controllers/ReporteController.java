@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.pcinfo.dtos.ReporteDTO;
+import pe.edu.upc.pcinfo.dtos.UsuarioReporteDTO;
 import pe.edu.upc.pcinfo.entities.Reporte;
 import pe.edu.upc.pcinfo.services.IReporteService;
 
@@ -49,5 +50,11 @@ public class ReporteController {
         reS.insert(a);
 
     }
-}
+    @GetMapping("/reporte-count")
+
+    public List<UsuarioReporteDTO> getReporteCountByUsuario() {
+        List<UsuarioReporteDTO> usuarioReporteDTOs = reS.consulta01();
+        return usuarioReporteDTOs;
+    }
+    }
 
