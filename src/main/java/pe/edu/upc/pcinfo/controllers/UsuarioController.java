@@ -60,4 +60,11 @@ public class UsuarioController {
         return usuarioComentarioDTOs;
     }
 
+
+    @GetMapping("/usuario-comentario-fecha")
+    public List<UsuarioComentarioDTO> getUsuarioComentarioFecha(){
+        List<UsuarioComentarioDTO> usuarioComentarioDTOs = uS.consulta02();
+        return usuarioComentarioDTOs;
+    }
+
 }

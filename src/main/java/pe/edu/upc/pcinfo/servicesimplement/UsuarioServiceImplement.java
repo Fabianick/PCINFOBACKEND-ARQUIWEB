@@ -1,12 +1,14 @@
 package pe.edu.upc.pcinfo.servicesimplement;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.pcinfo.dtos.UsuarioComentarioDTO;
 import pe.edu.upc.pcinfo.entities.Usuario;
 import pe.edu.upc.pcinfo.repositories.IUsuarioRepository;
 import pe.edu.upc.pcinfo.services.IUsuarioService;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +47,22 @@ public class UsuarioServiceImplement implements IUsuarioService {
             dto.setApellidop(data[0]);
             dto.setApellidom(data[1]);
             dto.setComentarioCount(Integer.parseInt(data[2]));
+            usuarioComentarioDTOs.add(dto);
+        }
+
+        return usuarioComentarioDTOs;
+    }
+
+    @Override
+    public List<UsuarioComentarioDTO> consulta02() {
+        List<String[]> comentariosByUsuario = uR.getComentariosByUsuario2();
+        List<UsuarioComentarioDTO> usuarioComentarioDTOs = new ArrayList<>();
+
+        for (String[] data: comentariosByUsuario) {
+            UsuarioComentarioDTO dto = new UsuarioComentarioDTO();
+            dto.setNombre(data[0]);
+            dto.setComentario(data[1]);
+            dto.setFecha(LocalDate.parse(data[2]));
             usuarioComentarioDTOs.add(dto);
         }
 

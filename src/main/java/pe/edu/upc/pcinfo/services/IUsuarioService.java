@@ -14,4 +14,6 @@ public interface IUsuarioService {
 
     public List<UsuarioComentarioDTO> consulta01();
 
+    public List<UsuarioComentarioDTO> consulta02();
+
 }
