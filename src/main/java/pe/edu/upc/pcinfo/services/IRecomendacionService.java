@@ -13,4 +13,6 @@ public interface IRecomendacionService {
     public Recomendacion listId(int id);
 
     public List<RecomendacionCuestionarioDTO> consulta02();
+    public List<RecomendacionCuestionarioDTO> consulta01();
+
 }

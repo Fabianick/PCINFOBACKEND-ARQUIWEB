@@ -49,4 +49,19 @@ public class RecomendacionServiceImplement implements IRecomendacionService {
         }
         return recomendacionCuestionarioDTOS;
     }
+
+    @Override
+    public List<RecomendacionCuestionarioDTO> consulta01() {
+        List<String[]> promRecomendCuest=rR.getPromedioRecomendacion();
+        List<RecomendacionCuestionarioDTO> recomendacionCuestionarioDTOS=new ArrayList<>();
+
+        for (String[] data:promRecomendCuest)
+        {
+            RecomendacionCuestionarioDTO dto=new RecomendacionCuestionarioDTO();
+            dto.setTipo_form(data[0]);
+            dto.setPromedio_valoracion(Integer.parseInt(data[1]));
+            recomendacionCuestionarioDTOS.add(dto);
+        }
+        return recomendacionCuestionarioDTOS;
+    }
 }

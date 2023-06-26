@@ -14,8 +14,11 @@ public interface IRecomendacionRepository extends JpaRepository<Recomendacion,In
 
 
     //CONSULTA 1 WEDY
-    @Query(value= "SELECT AVG(valoracion_user) AS promedio_calificacion\n" +
-            "FROM recomendacion;\n", nativeQuery = true)
+    @Query(value= "SELECT cuestionario.tipo_form, AVG(recomendacion.valoracion_user) AS Promedio_Valoracion\n" +
+            "FROM cuestionario\n" +
+            "INNER JOIN recomendacion ON cuestionario.id = recomendacion.id\n" +
+            "WHERE cuestionario.tipo_form IN ('Largo', 'Corto')\n" +
+            "GROUP BY cuestionario.tipo_form;\n", nativeQuery = true)
     List<String[]> getPromedioRecomendacion();
 
     //CONSULTA 2 WEDY

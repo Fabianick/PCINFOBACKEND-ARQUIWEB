@@ -59,4 +59,10 @@ public class RecomendacionController {
         List<RecomendacionCuestionarioDTO> recomendacionCuestionarioDTOS=rS.consulta02();
         return recomendacionCuestionarioDTOS;
     }
+
+    @GetMapping("/recomendacion-promedio-list")
+    public List<RecomendacionCuestionarioDTO> getPromedioRecomendacion(){
+        List<RecomendacionCuestionarioDTO> recomendacionCuestionarioDTOS=rS.consulta01();
+        return recomendacionCuestionarioDTOS;
+    }
 }
