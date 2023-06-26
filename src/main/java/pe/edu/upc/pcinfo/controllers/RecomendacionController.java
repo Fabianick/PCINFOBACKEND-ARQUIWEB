@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.pcinfo.dtos.CuestionarioDTO;
+import pe.edu.upc.pcinfo.dtos.RecomendacionCuestionarioDTO;
 import pe.edu.upc.pcinfo.dtos.RecomendacionDTO;
 import pe.edu.upc.pcinfo.entities.Cuestionario;
 import pe.edu.upc.pcinfo.entities.Recomendacion;
@@ -51,5 +52,11 @@ public class RecomendacionController {
         ModelMapper m=new ModelMapper();
         Recomendacion c=m.map(dto,Recomendacion.class);
         rS.insert(c);
+    }
+
+    @GetMapping("/recomendacion-cuestionario-list")
+    public List<RecomendacionCuestionarioDTO> getRecomendacionCuestionario(){
+        List<RecomendacionCuestionarioDTO> recomendacionCuestionarioDTOS=rS.consulta02();
+        return recomendacionCuestionarioDTOS;
     }
 }
