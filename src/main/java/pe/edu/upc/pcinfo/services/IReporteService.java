@@ -11,4 +11,5 @@ public interface IReporteService{
         public void delete(int id);
         public Reporte listId(int id);
         public List<UsuarioReporteDTO> consulta01();
+        public List<UsuarioReporteDTO> consulta02();
 }
